@@ -1,0 +1,394 @@
+@import 'compass';
+
+/* Sass Table of Contents:
+1.0 Overall Container
+2.0 Main Content 
+3.0 Images 
+4.0 Icons 
+*/
+
+
+$darkColour: #333;
+$lightColour: #ffffff;
+$generalText: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+
+/* ==========================================================================
+   1.0 Container 
+   ========================================================================== */
+* { margin:0; padding:0; }
+
+body{
+	// background-color: #ffffff;
+	@include background-image(linear-gradient(#ffffff, #aaaaaa));
+
+}
+
+#container{
+	max-width: 980px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   2.0 Navigation 
+   ========================================================================== */
+#nav_container{
+	width:100%;
+	height:100px;
+	background-color: $lightColour;
+	border-bottom: 15px solid #8CC63E;
+	margin-bottom: 5px;
+}
+
+/* Modernizr */
+.no-flexbox li {
+	display: inline-block;
+	float: left;
+	position:relative;
+	top: -102px;
+	left: 100px;
+}
+.no-flexbox #nav_wrapper{ float: left; }//display:inline-block;} 
+.no-flexbox #nav_menu{ text-align:center;}
+
+
+#nav_wrapper{
+	@include display-flex;
+	height: 100px;
+	width:980px;
+	margin: 0 auto;
+	background: $lightColour;  
+
+
+		#nav_menu{	
+			flex-basis:76%;
+			order:2;
+				ul{
+					@include display-flex;
+					@include flex-wrap(wrap);
+					@include align-items(center);
+					@include flex-direction(row);
+					list-style-type: none;
+					justify-content:flex-start;
+					margin-top: 53px;
+			}
+
+				li a{	
+					font-family: "ff-unit-rounded-web-1","ff-unit-rounded-web-2",sans-serif;
+					font-weight: bold;
+					font-size:20px;
+					margin-left: 60px;
+					padding-top: 20px;
+					text-decoration: none;
+					color: $darkColour;
+				}
+				.button-text:hover{
+					color: #8CC63E;
+				}
+	}
+		#logo_container{
+			flex-basis:12%;
+			@include order(1);
+
+			#logo_img{
+				border:none;
+				// @include border-radius(20px 20px 20px 20px);
+				// border-radius: 7px 7px 0px 0px;
+			}
+	}
+
+		#social_nav{
+			flex-basis:12%;
+			@include order(3);
+			margin-top: 40px;
+			margin-right: -100px;
+		}
+}
+
+/* Modernizr */
+.no-flexbox #logo_img{text-decoration: none; border: 0px}
+
+
+/* ==========================================================================
+   3.0 Main Content
+   ========================================================================== */
+
+/* Modernizr */
+.no-flexbox #main_wrapper { display: inline-block; }
+
+.no-flexbox #aside_left, .no-flexbox #main_content, .no-flexbox #aside_right{ 
+	float:left; width: 320px;
+} 
+
+
+#main_wrapper{
+	@include display-flex;
+	@include flex-wrap(wrap);
+
+		p{margin: 10px;}
+		p.text_asideL{color:green;}
+		p.text_Main{color:orange;}
+		p.text_asideR{color:red;}
+
+		#aside_left{
+			flex-grow:1;
+			flex-basis:33%;
+			@include order(1);
+			font-family: $generalText;
+			min-height: 280px;
+			// background: $lightColour;
+			border: 1px solid #AAAAAA;
+
+		}
+
+		#main_content{
+			flex-grow:1;
+			flex-basis:33%;
+			@include order(2);
+			font-family: $generalText;
+			min-height: 400px;
+			// background: $lightColour;
+			border: 1px solid #AAAAAA;
+		}
+
+
+		#aside_right{
+			flex-grow:1;
+			flex-basis:33%;
+			@include order(3);
+			font-family: $generalText;
+			min-height: 280px;
+			// background: $lightColour;
+			border: 1px solid #AAAAAA;
+		}
+	}
+
+/* Modernizr */
+.no-flexbox .footer_titles, .no-flexbox #footer_address { position:relative; right:44px; }
+
+
+footer{
+		width: 100%;
+		min-height: 240px;
+		height: auto;
+		background: #2f3033;
+		border-top: 46px solid #8CC63E;
+		// @include border-radius(0px 0px 7px 7px);
+		// border-radius: 0px 0px 7px 7px;
+
+
+	#footer_container{
+		max-width:980px;
+		margin: 0 auto;
+	}
+		
+	#explore_container{
+			padding: 20px 20px;
+			font-size:13px;
+			line-height: 1.5em;
+			font-family: $generalText;
+			color: #AAAAAA;
+			
+			a{
+				display: block;
+				text-decoration: none;
+				color: inherit;
+			}
+	}
+
+	#address_container{
+			position:relative;
+			margin: 0 auto; 
+			width: 200px;
+			bottom:120px;
+			
+			address{
+				font-size:13px;
+				font-family: $generalText;
+				font-style: normal;
+				line-height: 1.5em;
+				color: #AAAAAA;
+			}
+	}
+
+	.footer_titles{
+		width: 100px;
+		font-size:13px;
+		font-family: $generalText;
+		font-style: normal;
+		font-weight: bold;
+		padding-bottom: 5px;
+		color: #ffffff;
+	}
+
+	.cp_rights{
+			font-size:13px;
+			font-family: $generalText;
+			position: relative;
+			bottom:20px;
+			text-align: center;
+			color: #AAAAAA;
+			border-top: 1px solid #AAAAAA;
+		}	
+}
+
+
+#main_img{
+	@include border-radius(20px 20px 20px 20px); //Compass
+	width: 100%;
+	height: 100%;
+}
+
+/* ==========================================================================
+   4.0 Icons
+   ========================================================================== */
+
+#my_favicon{
+	height: 16px;
+	width: 16px;
+}
+
+.icon_svg{
+	width: 20px;
+	height: 20px;
+	padding-right:0px;
+	fill: $darkColour;
+}
+
+/* Modernizr */
+.no-flexbox .social_links{ position: relative; top: 110px; left:800px;}
+.no-flexbox #explore_container a{ color:#AAAAAA; }
+
+/*aligning nav text with icons*/
+span.button-text{
+	position: relative;
+   	top: -3px;
+}
+
+/*Social icons with Sass*/
+ul.social_links li{list-style-type:none;
+	a{
+		display:inline-block; 
+		float: right; width:32px; height:32px; 
+		margin-top: 10px;
+		text-indent:-9999px;
+	}
+}
+
+// $icons:(twitter, facebook);
+// @each $social in $icons{
+// 	.#{$social} { background:url('../images/social/#{$social}.png') no-repeat; }
+// }
+
+
+//Sprites icons with Compass
+@import "social/*.png";
+@include all-social-sprites; 					//in footer
+.facebook { @include social-sprite(facebook) };	//in nav bar
+
+
+.icon_svg:hover{/*fill:#8CC63E !important;*/}
+
+
+
+/* ==========================================================================
+   5.0 Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   6.0 Media Queries
+   ========================================================================== */
+
+$break-small:400px; 	/* Smartphones */
+$break-medium:768px;	/* Tablets 		*/
+$break-large:1200px; /* Lg Screens 	*/
+
+#main_wrapper{
+	@media only screen and (max-width: $break-medium){
+		display: block;
+	}
+}
+
+#aside_left{
+	@media screen and (max-width: $break-small){
+		display: none;
+	}
+}
+
+@mixin phone{
+	@media only screen and (max-width: $break-small){
+		@content;
+	}
+}
+
+@include phone{
+
+	#nav_container{
+		border-bottom: 0;
+		margin-bottom: 0;
+		height:50px;
+	}
+
+	#nav_wrapper{
+		
+			#logo_img{
+				width: 64px;
+				height: 50px;
+			}
+		
+			#nav_menu{ 
+			li a{
+				position: relative;
+				left: 0px;
+				padding-right: 10px;
+				margin: 0px;
+				font-size: 10px;
+			}	
+			ul{
+				margin-top: 25px;
+			}
+			.icon_svg{
+				width: 8px;
+				height: 8px;
+				position: relative;
+				bottom:2px;
+
+				// display: none;
+			}		
+		}	
+	}
+	#main_wrapper{
+		font-size: 10px;
+	}
+	footer{
+		min-height: 100px;
+		border-top: 20px solid #8CC63E;
+	}
+
+	#footer_container{
+		p, a, #footer_address{
+			font-size: 8px;
+			line-height: 1em;
+		}
+	
+		#address_container{
+			width:120px;
+			display: block;
+			bottom:65px;
+		}
+	ul.social_links li{display:none;}
+	
+	}
+}
+
